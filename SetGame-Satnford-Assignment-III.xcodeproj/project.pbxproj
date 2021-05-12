@@ -58,9 +58,11 @@
 		DEFCAA25264C92F800D302CD /* SetGame-Satnford-Assignment-III */ = {
 			isa = PBXGroup;
 			children = (
-				DEFCAA26264C92F800D302CD /* AppDelegate.swift */,
+				DEFCAA3E264C930700D302CD /* Model */,
+				DEFCAA3D264C930100D302CD /* View */,
+				DEFCAA3F264C931000D302CD /* ViewModel */,
 				DEFCAA28264C92F800D302CD /* SceneDelegate.swift */,
-				DEFCAA2A264C92F800D302CD /* ContentView.swift */,
+				DEFCAA26264C92F800D302CD /* AppDelegate.swift */,
 				DEFCAA2F264C92F900D302CD /* Assets.xcassets */,
 				DEFCAA34264C92F900D302CD /* LaunchScreen.storyboard */,
 				DEFCAA37264C92F900D302CD /* Info.plist */,
@@ -76,6 +78,28 @@
 				DEFCAA32264C92F900D302CD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DEFCAA3D264C930100D302CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEFCAA2A264C92F800D302CD /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DEFCAA3E264C930700D302CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEFCAA3F264C931000D302CD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
