@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE8A9A9A264C9B9700C4C178 /* CustomShape-Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */; };
 		DEFCAA27264C92F800D302CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA26264C92F800D302CD /* AppDelegate.swift */; };
 		DEFCAA29264C92F800D302CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA28264C92F800D302CD /* SceneDelegate.swift */; };
 		DEFCAA2B264C92F800D302CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA2A264C92F800D302CD /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Diamond.swift"; sourceTree = "<group>"; };
 		DEFCAA23264C92F800D302CD /* SetGame-Satnford-Assignment-III.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SetGame-Satnford-Assignment-III.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFCAA26264C92F800D302CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEFCAA28264C92F800D302CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE8A9A9B264C9EBF00C4C178 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */,
+			);
+			path = Shapes;
+			sourceTree = "<group>";
+		};
 		DEFCAA1A264C92F800D302CD = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		DEFCAA25264C92F800D302CD /* SetGame-Satnford-Assignment-III */ = {
 			isa = PBXGroup;
 			children = (
+				DE8A9A9B264C9EBF00C4C178 /* Shapes */,
 				DEFCAA3E264C930700D302CD /* Model */,
 				DEFCAA3D264C930100D302CD /* View */,
 				DEFCAA3F264C931000D302CD /* ViewModel */,
@@ -176,6 +187,7 @@
 				DEFCAA27264C92F800D302CD /* AppDelegate.swift in Sources */,
 				DEFCAA29264C92F800D302CD /* SceneDelegate.swift in Sources */,
 				DEFCAA2B264C92F800D302CD /* ContentView.swift in Sources */,
+				DE8A9A9A264C9B9700C4C178 /* CustomShape-Diamond.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
