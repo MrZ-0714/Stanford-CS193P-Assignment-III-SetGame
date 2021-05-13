@@ -23,11 +23,11 @@ struct SetGameView: View {
 }
 
 struct CardView: View {
-    var card: SetGame<String>.Card
+    var card: SetGame<Oval>.Card
     
     @ViewBuilder
     var body: some View {
-            Text(card.content).padding(15)
+        card.content
     }
 }
 
