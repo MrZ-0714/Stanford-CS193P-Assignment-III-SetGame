@@ -33,8 +33,12 @@ struct Oval: Shape {
             
             p.closeSubpath()
         }
-        
-        
+    }
+}
+
+struct OvalPreview: PreviewProvider {
+    static var previews: some View {
+        Oval()
     }
 }
 
