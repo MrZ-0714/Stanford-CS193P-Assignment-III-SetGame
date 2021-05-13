@@ -12,7 +12,8 @@ struct ContentView: View {
         VStack {
             Text("Hello, world!")
                 .padding()
-            Diamond()
+            Diamond().fill(Color.red)
+            Round()
         }
     }
 }

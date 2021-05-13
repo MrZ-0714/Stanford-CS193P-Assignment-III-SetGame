@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE8A9A9A264C9B9700C4C178 /* CustomShape-Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */; };
+		DE8A9A9D264CA16800C4C178 /* CustomShape-Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A9A9C264CA16800C4C178 /* CustomShape-Round.swift */; };
 		DEFCAA27264C92F800D302CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA26264C92F800D302CD /* AppDelegate.swift */; };
 		DEFCAA29264C92F800D302CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA28264C92F800D302CD /* SceneDelegate.swift */; };
 		DEFCAA2B264C92F800D302CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA2A264C92F800D302CD /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Diamond.swift"; sourceTree = "<group>"; };
+		DE8A9A9C264CA16800C4C178 /* CustomShape-Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Round.swift"; sourceTree = "<group>"; };
 		DEFCAA23264C92F800D302CD /* SetGame-Satnford-Assignment-III.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SetGame-Satnford-Assignment-III.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFCAA26264C92F800D302CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEFCAA28264C92F800D302CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */,
+				DE8A9A9C264CA16800C4C178 /* CustomShape-Round.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				DEFCAA29264C92F800D302CD /* SceneDelegate.swift in Sources */,
 				DEFCAA2B264C92F800D302CD /* ContentView.swift in Sources */,
 				DE8A9A9A264C9B9700C4C178 /* CustomShape-Diamond.swift in Sources */,
+				DE8A9A9D264CA16800C4C178 /* CustomShape-Round.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
