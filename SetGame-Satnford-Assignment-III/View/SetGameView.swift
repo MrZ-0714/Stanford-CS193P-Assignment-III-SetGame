@@ -22,15 +22,6 @@ struct SetGameView: View {
     }
 }
 
-struct CardView: View {
-    var card: SetGame<Oval>.Card
-    
-    @ViewBuilder
-    var body: some View {
-        card.content
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let setGame = SetGameVM()
