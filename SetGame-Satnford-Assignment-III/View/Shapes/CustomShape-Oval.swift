@@ -13,8 +13,8 @@ struct Oval: Shape {
             let width = rect.width
             let height = rect.height
             let radius = min(width, height) / 5
-            let leftCenter = CGPoint(x: rect.midX - width / 4, y: rect.midY)
-            let rightCenter = CGPoint(x: rect.midX + width / 4, y: rect.midY)
+            let leftCenter = CGPoint(x: rect.midX - width / 5, y: rect.midY)
+            let rightCenter = CGPoint(x: rect.midX + width / 5, y: rect.midY)
             
             p.addArc(
                 center: leftCenter,

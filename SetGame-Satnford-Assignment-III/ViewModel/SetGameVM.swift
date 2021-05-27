@@ -8,21 +8,24 @@
 import SwiftUI
 
 class SetGameVM: ObservableObject {
-    @Published private var model: SetGame<Oval> = SetGameVM.createSetGame()
+    @Published private var model: SetGame<SetGameCard> = SetGameVM.createSetGame()
     
-    private static func createSetGame() -> SetGame<Oval> {
-        let dataSetStrings = [Oval(), Oval()]
+    private static func createSetGame() -> SetGame<SetGameCard> {
+        let dataSetStrings = [
+            SetGameCard(numberOfShapes: 1, opacity: 0.0, color: .red),
+            SetGameCard(numberOfShapes: 2, opacity: 0.5, color: .blue)
+        ]
         
         return SetGame(numberOfCards: dataSetStrings.count) {
             index in dataSetStrings[index]
         }
     }
     
-    var cards: Array<SetGame<Oval>.Card> {
+    var cards: Array<SetGame<SetGameCard>.Card> {
         model.cards
     }
     
-    func choose(card: SetGame<Oval>.Card) {
+    func choose(card: SetGame<SetGameCard>.Card) {
         objectWillChange.send()
         model.choose(card: card)
     }

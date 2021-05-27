@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CardView: View {
-    var card: SetGame<Oval>.Card
+    var card: SetGame<SetGameCard>.Card
     
     @ViewBuilder
     var body: some View {
-        card.content
+        card.content.returnedShape
     }
 }

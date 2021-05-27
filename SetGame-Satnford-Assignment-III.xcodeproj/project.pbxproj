@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE7B3438266048C900D3D6D5 /* SetCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B3437266048C900D3D6D5 /* SetCardModel.swift */; };
 		DE8A9A9A264C9B9700C4C178 /* CustomShape-Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */; };
 		DE8A9A9F264CA8A600C4C178 /* CustomShape-Oval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A9A9E264CA8A600C4C178 /* CustomShape-Oval.swift */; };
 		DEDDBCDF264DB46D00199D5C /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDBCDE264DB46D00199D5C /* SetGame.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE7B3437266048C900D3D6D5 /* SetCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardModel.swift; sourceTree = "<group>"; };
 		DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Diamond.swift"; sourceTree = "<group>"; };
 		DE8A9A9E264CA8A600C4C178 /* CustomShape-Oval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Oval.swift"; sourceTree = "<group>"; };
 		DEDDBCDE264DB46D00199D5C /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
@@ -77,7 +79,6 @@
 		DEFCAA25264C92F800D302CD /* SetGame-Satnford-Assignment-III */ = {
 			isa = PBXGroup;
 			children = (
-				DE8A9A9B264C9EBF00C4C178 /* Shapes */,
 				DEFCAA3E264C930700D302CD /* Model */,
 				DEFCAA3D264C930100D302CD /* View */,
 				DEFCAA3F264C931000D302CD /* ViewModel */,
@@ -103,6 +104,7 @@
 		DEFCAA3D264C930100D302CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE8A9A9B264C9EBF00C4C178 /* Shapes */,
 				DEFCAA2A264C92F800D302CD /* SetGameView.swift */,
 				DEDDBCE2264DEDAD00199D5C /* CardView.swift */,
 			);
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				DEDDBCDE264DB46D00199D5C /* SetGame.swift */,
+				DE7B3437266048C900D3D6D5 /* SetCardModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				DEFCAA29264C92F800D302CD /* SceneDelegate.swift in Sources */,
 				DEDDBCE1264DBBDE00199D5C /* SetGameVM.swift in Sources */,
 				DEDDBCDF264DB46D00199D5C /* SetGame.swift in Sources */,
+				DE7B3438266048C900D3D6D5 /* SetCardModel.swift in Sources */,
 				DE8A9A9F264CA8A600C4C178 /* CustomShape-Oval.swift in Sources */,
 				DEFCAA2B264C92F800D302CD /* SetGameView.swift in Sources */,
 				DE8A9A9A264C9B9700C4C178 /* CustomShape-Diamond.swift in Sources */,

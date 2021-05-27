@@ -23,7 +23,6 @@ struct SetGame<CardContent> {
             let content: CardContent = cardContentFactory(id)
             cards.append(Card(id: id, content: content))
         }
-        cards.shuffle()
     }
     
     struct Card: Identifiable {
