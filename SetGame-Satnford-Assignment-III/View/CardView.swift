@@ -12,6 +12,8 @@ struct CardView: View {
     
     @ViewBuilder
     var body: some View {
-        card.content.returnedShape
+        GeometryReader {
+            geometry in card.content.returnedShape
+        }
     }
 }

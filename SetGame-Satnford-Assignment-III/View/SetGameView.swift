@@ -12,12 +12,9 @@ struct SetGameView: View {
     
     var body: some View {
         VStack {
-            ForEach(setGameVM.cards){ card in
-                CardView(card: card).onTapGesture {
-                    setGameVM.choose(card: card)
-                }
+            Grid(setGameVM.cards) {
+                card in CardView(card: card)
             }
-            
         }
     }
 }
