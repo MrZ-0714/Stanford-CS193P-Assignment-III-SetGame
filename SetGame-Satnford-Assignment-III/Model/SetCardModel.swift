@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct SetGameCard {
-    public var numberOfShapes: Int
-    public var opacity: Double
-    public var color: SwiftUI.Color
-    public var returnedShape = Oval()
+    private var numberOfShapes: Int
+    private var opacity: Double
+    private var color: SwiftUI.Color
+    public var returnedShape : some View {
+        return Oval().colorMultiply(color).opacity(opacity)
+    }
     // TODO: public var shapeType: Enum
     
     init(numberOfShapes: Int, opacity: Double, color: SwiftUI.Color) {

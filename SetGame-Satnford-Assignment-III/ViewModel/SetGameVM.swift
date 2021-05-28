@@ -12,7 +12,7 @@ class SetGameVM: ObservableObject {
     
     private static func createSetGame() -> SetGame<SetGameCard> {
         let dataSetStrings = [
-            SetGameCard(numberOfShapes: 1, opacity: 0.0, color: .red),
+            SetGameCard(numberOfShapes: 1, opacity: 1, color: .red),
             SetGameCard(numberOfShapes: 2, opacity: 0.5, color: .blue)
         ]
         

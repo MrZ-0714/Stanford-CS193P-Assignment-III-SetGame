@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE30B8A1266191940010ACA2 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE30B8A0266191940010ACA2 /* GridLayout.swift */; };
+		DE30B8A32661919F0010ACA2 /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE30B8A22661919F0010ACA2 /* SetGameView.swift */; };
+		DE30B8A7266191A80010ACA2 /* CustomShape-Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE30B8A6266191A80010ACA2 /* CustomShape-Diamond.swift */; };
+		DE30B8A9266191AB0010ACA2 /* CustomShape-Oval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE30B8A8266191AB0010ACA2 /* CustomShape-Oval.swift */; };
 		DE7B3438266048C900D3D6D5 /* SetCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7B3437266048C900D3D6D5 /* SetCardModel.swift */; };
 		DE8A9A9A264C9B9700C4C178 /* CustomShape-Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */; };
 		DE8A9A9F264CA8A600C4C178 /* CustomShape-Oval.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A9A9E264CA8A600C4C178 /* CustomShape-Oval.swift */; };
@@ -15,14 +19,19 @@
 		DEDDBCE3264DEDAD00199D5C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDBCE2264DEDAD00199D5C /* CardView.swift */; };
 		DEFCAA27264C92F800D302CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA26264C92F800D302CD /* AppDelegate.swift */; };
 		DEFCAA29264C92F800D302CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA28264C92F800D302CD /* SceneDelegate.swift */; };
-		DEFCAA2B264C92F800D302CD /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA2A264C92F800D302CD /* SetGameView.swift */; };
 		DEFCAA2E264C92F800D302CD /* SetGame_Satnford_Assignment_III.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEFCAA2C264C92F800D302CD /* SetGame_Satnford_Assignment_III.xcdatamodeld */; };
 		DEFCAA30264C92F900D302CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEFCAA2F264C92F900D302CD /* Assets.xcassets */; };
 		DEFCAA33264C92F900D302CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEFCAA32264C92F900D302CD /* Preview Assets.xcassets */; };
 		DEFCAA36264C92F900D302CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEFCAA34264C92F900D302CD /* LaunchScreen.storyboard */; };
+		DEFF8251266191F60061C5D8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF824F266191F60061C5D8 /* CardView.swift */; };
+		DEFF8252266191F60061C5D8 /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFF8250266191F60061C5D8 /* SetGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE30B8A0266191940010ACA2 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		DE30B8A22661919F0010ACA2 /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
+		DE30B8A6266191A80010ACA2 /* CustomShape-Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Diamond.swift"; sourceTree = "<group>"; };
+		DE30B8A8266191AB0010ACA2 /* CustomShape-Oval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Oval.swift"; sourceTree = "<group>"; };
 		DE7B3437266048C900D3D6D5 /* SetCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardModel.swift; sourceTree = "<group>"; };
 		DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Diamond.swift"; sourceTree = "<group>"; };
 		DE8A9A9E264CA8A600C4C178 /* CustomShape-Oval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomShape-Oval.swift"; sourceTree = "<group>"; };
@@ -32,12 +41,13 @@
 		DEFCAA23264C92F800D302CD /* SetGame-Satnford-Assignment-III.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SetGame-Satnford-Assignment-III.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFCAA26264C92F800D302CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEFCAA28264C92F800D302CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DEFCAA2A264C92F800D302CD /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		DEFCAA2D264C92F800D302CD /* SetGame_Satnford_Assignment_III.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SetGame_Satnford_Assignment_III.xcdatamodel; sourceTree = "<group>"; };
 		DEFCAA2F264C92F900D302CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEFCAA32264C92F900D302CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DEFCAA35264C92F900D302CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEFCAA37264C92F900D302CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEFF824F266191F60061C5D8 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DEFF8250266191F60061C5D8 /* SetGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				DE8A9A99264C9B9700C4C178 /* CustomShape-Diamond.swift */,
+				DE30B8A8266191AB0010ACA2 /* CustomShape-Oval.swift */,
+				DE30B8A6266191A80010ACA2 /* CustomShape-Diamond.swift */,
 				DE8A9A9E264CA8A600C4C178 /* CustomShape-Oval.swift */,
 			);
 			path = Shapes;
@@ -104,8 +116,11 @@
 		DEFCAA3D264C930100D302CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE30B8A0266191940010ACA2 /* GridLayout.swift */,
 				DE8A9A9B264C9EBF00C4C178 /* Shapes */,
-				DEFCAA2A264C92F800D302CD /* SetGameView.swift */,
+				DE30B8A22661919F0010ACA2 /* SetGameView.swift */,
+				DEFF824F266191F60061C5D8 /* CardView.swift */,
+				DEFF8250266191F60061C5D8 /* SetGameView.swift */,
 				DEDDBCE2264DEDAD00199D5C /* CardView.swift */,
 			);
 			path = View;
@@ -198,16 +213,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFF8251266191F60061C5D8 /* CardView.swift in Sources */,
 				DEFCAA2E264C92F800D302CD /* SetGame_Satnford_Assignment_III.xcdatamodeld in Sources */,
 				DEDDBCE3264DEDAD00199D5C /* CardView.swift in Sources */,
 				DEFCAA27264C92F800D302CD /* AppDelegate.swift in Sources */,
 				DEFCAA29264C92F800D302CD /* SceneDelegate.swift in Sources */,
+				DE30B8A9266191AB0010ACA2 /* CustomShape-Oval.swift in Sources */,
 				DEDDBCE1264DBBDE00199D5C /* SetGameVM.swift in Sources */,
+				DE30B8A32661919F0010ACA2 /* SetGameView.swift in Sources */,
 				DEDDBCDF264DB46D00199D5C /* SetGame.swift in Sources */,
 				DE7B3438266048C900D3D6D5 /* SetCardModel.swift in Sources */,
 				DE8A9A9F264CA8A600C4C178 /* CustomShape-Oval.swift in Sources */,
-				DEFCAA2B264C92F800D302CD /* SetGameView.swift in Sources */,
 				DE8A9A9A264C9B9700C4C178 /* CustomShape-Diamond.swift in Sources */,
+				DE30B8A1266191940010ACA2 /* GridLayout.swift in Sources */,
+				DE30B8A7266191A80010ACA2 /* CustomShape-Diamond.swift in Sources */,
+				DEFF8252266191F60061C5D8 /* SetGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
