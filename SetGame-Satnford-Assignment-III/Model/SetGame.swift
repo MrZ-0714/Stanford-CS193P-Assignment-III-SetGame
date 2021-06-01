@@ -19,7 +19,7 @@ struct SetGame<CardContent> {
     
     init(numberOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
-        for id in 0...numberOfCards - 1 {
+        for id in 0..<numberOfCards {
             let content: CardContent = cardContentFactory(id)
             cards.append(Card(id: id, content: content))
         }
