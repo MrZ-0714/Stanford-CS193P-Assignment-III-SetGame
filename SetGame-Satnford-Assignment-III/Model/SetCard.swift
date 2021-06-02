@@ -35,7 +35,9 @@ struct SetGameCard {
         return
             VStack(spacing: 5) {
                 ForEach(0..<numberOfShapes) { _ in 
-                    returnedShape.init(shapeType: shapeType).opacity(opacity)
+                    returnedShape.init(shapeType: shapeType)
+                        .stroke(Color.black, lineWidth: 1.0)
+                        .overlay(returnedShape.init(shapeType: shapeType).foregroundColor(Color.black).opacity(opacity))
                 }
             }
     }
@@ -55,17 +57,17 @@ struct SetGameCard {
         case one = 1, two, three
     }
     
-    enum Opacities: Double, CaseIterable {
+    enum Opacities: Double, CaseIterable, Equatable {
         case None = 0.0
         case aThird = 0.3
         case full = 1
     }
-//    
-//    enum ShapeColors: SwiftUI.Color, CaseIterable, Equatable {
-//        var rawValue: Color
-//        
-//        typealias RawValue = SwiftUI.Color
-//        case red, black, orange
-//    }
+    //    
+    //    enum ShapeColors: SwiftUI.Color, CaseIterable, Equatable {
+    //        var rawValue: Color
+    //        
+    //        typealias RawValue = SwiftUI.Color
+    //        case red, black, orange
+    //    }
     
 }
