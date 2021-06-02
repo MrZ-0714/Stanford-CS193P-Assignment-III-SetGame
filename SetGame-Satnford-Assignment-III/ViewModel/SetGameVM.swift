@@ -13,7 +13,7 @@ class SetGameVM: ObservableObject {
     private static func createSetGame() -> SetGame<SetGameCard> {
         var dataSetStrings = [SetGameCard]()
         for _ in 0...15 {
-            dataSetStrings.append(SetGameCard(numberOfShapes: 1, opacity: 0.5, color: .red))
+            dataSetStrings.append(SetGameCard(shapeType: "Oval", numberOfShapes: 3, opacity: 0.5, color: .red))
         }
         
         return SetGame(numberOfCards: dataSetStrings.count) {

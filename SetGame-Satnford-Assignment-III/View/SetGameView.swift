@@ -11,7 +11,7 @@ struct SetGameView: View {
     @ObservedObject var setGameVM: SetGameVM
     
     var body: some View {
-        VStack {
+        VStack() {
             Grid(setGameVM.cards) {
                 card in CardView(card: card)
             }

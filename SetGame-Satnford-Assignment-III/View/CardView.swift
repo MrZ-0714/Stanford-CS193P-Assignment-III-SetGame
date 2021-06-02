@@ -13,7 +13,17 @@ struct CardView: View {
     @ViewBuilder
     var body: some View {
         GeometryReader {
-            geometry in card.content.returnedShape
+            geometry in card.content.cardToShow
         }
+        .aspectRatio(1/1.618, contentMode: .fit)
+        .border(Color.black, width: 1)
+        .padding()
+    }
+}
+
+struct CardView_Previews: PreviewProvider {
+    static var previews: some View {
+        let card = SetGameVM.init().cards[0]
+        CardView(card: card)
     }
 }
