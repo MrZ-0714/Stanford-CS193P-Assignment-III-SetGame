@@ -11,7 +11,7 @@ struct SetGameCard {
     private var shapeType: String
     private var numberOfShapes: Int
     private var opacity: Double
-    //private var color: SwiftUI.Color
+    private var shapeColor: String
     
     private struct returnedShape : Shape {
         var shapeType: String
@@ -28,7 +28,23 @@ struct SetGameCard {
                 return Circle().path(in: rect)
             }
         }
+    }
+    
+    private struct returnedColor {
+        var coloring: String
         
+        func getColor() -> SwiftUI.Color {
+            switch coloring {
+            case "Blue":
+                return .blue
+            case "Red":
+                return .red
+            case "Black":
+                return .black
+            default:
+                return .white
+            }
+        }
     }
     
     public var cardToShow : some View {
@@ -36,17 +52,24 @@ struct SetGameCard {
             VStack(spacing: 5) {
                 ForEach(0..<numberOfShapes) { _ in 
                     returnedShape.init(shapeType: shapeType)
-                        .stroke(Color.black, lineWidth: 1.0)
-                        .overlay(returnedShape.init(shapeType: shapeType).foregroundColor(Color.black).opacity(opacity))
+                        .stroke(
+                            returnedColor.init(coloring: shapeColor).getColor(),
+                            lineWidth: 1.0)
+                        .overlay(returnedShape
+                                    .init(shapeType: shapeType)
+                                    .foregroundColor(
+                                        returnedColor.init(coloring: shapeColor).getColor())
+                                    .opacity(opacity)
+                        )
                 }
             }
     }
     
-    init(shapeType: String, numberOfShapes: Int, opacity: Double){//}, color: SwiftUI.Color) {
+    init(shapeType: String, numberOfShapes: Int, opacity: Double, shapeColor: String) {
         self.shapeType = shapeType
         self.numberOfShapes = numberOfShapes
         self.opacity = opacity
-        //self.color = color
+        self.shapeColor = shapeColor
     }
     
     enum ShapeTypes: String, CaseIterable, Equatable {
@@ -62,12 +85,9 @@ struct SetGameCard {
         case aThird = 0.3
         case full = 1
     }
-    //    
-    //    enum ShapeColors: SwiftUI.Color, CaseIterable, Equatable {
-    //        var rawValue: Color
-    //        
-    //        typealias RawValue = SwiftUI.Color
-    //        case red, black, orange
-    //    }
+    
+    enum ShapeColors: String, CaseIterable, Equatable {
+        case Red, Blue, Black
+    }
     
 }
