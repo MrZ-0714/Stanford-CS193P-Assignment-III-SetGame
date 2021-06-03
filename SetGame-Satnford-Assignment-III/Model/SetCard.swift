@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct SetGameCard {
-    private var shapeType: String
     private var numberOfShapes: Int
-    private var opacity: Double
+    private var shapeType: String
     private var shapeColor: String
+    private var opacity: Double
+    
+    init(shapeType: String, numberOfShapes: Int, opacity: Double, shapeColor: String) {
+        self.shapeType = shapeType
+        self.numberOfShapes = numberOfShapes
+        self.opacity = opacity
+        self.shapeColor = shapeColor
+    }
     
     private struct returnedShape : Shape {
         var shapeType: String
@@ -55,29 +62,26 @@ struct SetGameCard {
                         .stroke(
                             returnedColor.init(coloring: shapeColor).getColor(),
                             lineWidth: 1.0)
-                        .overlay(returnedShape
-                                    .init(shapeType: shapeType)
+                        .overlay(returnedShape.init(shapeType: shapeType)
                                     .foregroundColor(
-                                        returnedColor.init(coloring: shapeColor).getColor())
+                                        returnedColor.init(coloring: shapeColor).getColor()
+                                    )
                                     .opacity(opacity)
                         )
                 }
             }
     }
     
-    init(shapeType: String, numberOfShapes: Int, opacity: Double, shapeColor: String) {
-        self.shapeType = shapeType
-        self.numberOfShapes = numberOfShapes
-        self.opacity = opacity
-        self.shapeColor = shapeColor
+    enum NumberOfShapesToDraw: Int, CaseIterable, Equatable {
+        case one = 1, two, three
     }
     
     enum ShapeTypes: String, CaseIterable, Equatable {
         case Oval, Circle, Diamond
     }
     
-    enum NumberOfShapesToDraw: Int, CaseIterable, Equatable {
-        case one = 1, two, three
+    enum ShapeColors: String, CaseIterable, Equatable {
+        case Red, Blue, Black
     }
     
     enum Opacities: Double, CaseIterable, Equatable {
@@ -85,9 +89,4 @@ struct SetGameCard {
         case aThird = 0.3
         case full = 1
     }
-    
-    enum ShapeColors: String, CaseIterable, Equatable {
-        case Red, Blue, Black
-    }
-    
 }

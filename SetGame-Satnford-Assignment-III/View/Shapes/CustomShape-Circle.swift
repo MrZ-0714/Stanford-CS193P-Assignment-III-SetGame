@@ -32,8 +32,6 @@ struct CirclePreview: PreviewProvider {
     static var previews: some View {
         VStack {
             Circle()
-            Circle()
-            Circle()
         }
         
     }

@@ -11,20 +11,20 @@ class SetGameVM: ObservableObject {
     @Published private var model: SetGame<SetGameCard> = SetGameVM.createSetGame()
     
     private static func createSetGame() -> SetGame<SetGameCard> {
-        var dataSetStrings = [SetGameCard]()
+        var cardContents = [SetGameCard]()
         
         for number in SetGameCard.NumberOfShapesToDraw.allCases {
             for shape in SetGameCard.ShapeTypes.allCases {
                 for opacity in SetGameCard.Opacities.allCases {
                     for shapeColor in SetGameCard.ShapeColors.allCases {
-                        dataSetStrings.append(SetGameCard(shapeType: shape.rawValue, numberOfShapes: number.rawValue, opacity: opacity.rawValue, shapeColor: shapeColor.rawValue))
+                        cardContents.append(SetGameCard(shapeType: shape.rawValue, numberOfShapes: number.rawValue, opacity: opacity.rawValue, shapeColor: shapeColor.rawValue))
                     }
                 }
             }
         }
         
-        return SetGame(numberOfCards: dataSetStrings.count) {
-            index in dataSetStrings[index]
+        return SetGame(numberOfCards: cardContents.count) {
+            index in cardContents[index]
         }
     }
     
