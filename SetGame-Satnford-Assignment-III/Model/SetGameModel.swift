@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SetGame<CardContent> {
+struct SetGameModel<CardContent> {
     private(set) var cards: Array<Card>
     var chosenCards: Array<Card> = []
     var numberOfSetsDiscovered: Int = 0

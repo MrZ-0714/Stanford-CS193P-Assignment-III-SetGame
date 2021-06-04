@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SetGameCard {
+struct SetGameCardVM {
     private var numberOfShapes: Int
     private var shapeType: String
     private var shapeColor: String

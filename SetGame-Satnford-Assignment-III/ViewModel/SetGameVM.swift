@@ -8,31 +8,31 @@
 import SwiftUI
 
 class SetGameVM: ObservableObject {
-    @Published private var model: SetGame<SetGameCard> = SetGameVM.createSetGame()
+    @Published private var model: SetGameModel<SetGameCardVM> = SetGameVM.createSetGame()
     
-    private static func createSetGame() -> SetGame<SetGameCard> {
-        var cardContents = [SetGameCard]()
+    private static func createSetGame() -> SetGameModel<SetGameCardVM> {
+        var cardContents = [SetGameCardVM]()
         
-        for number in SetGameCard.NumberOfShapesToDraw.allCases {
-            for shape in SetGameCard.ShapeTypes.allCases {
-                for opacity in SetGameCard.Opacities.allCases {
-                    for shapeColor in SetGameCard.ShapeColors.allCases {
-                        cardContents.append(SetGameCard(shapeType: shape.rawValue, numberOfShapes: number.rawValue, opacity: opacity.rawValue, shapeColor: shapeColor.rawValue))
+        for number in SetGameCardVM.NumberOfShapesToDraw.allCases {
+            for shape in SetGameCardVM.ShapeTypes.allCases {
+                for opacity in SetGameCardVM.Opacities.allCases {
+                    for shapeColor in SetGameCardVM.ShapeColors.allCases {
+                        cardContents.append(SetGameCardVM(shapeType: shape.rawValue, numberOfShapes: number.rawValue, opacity: opacity.rawValue, shapeColor: shapeColor.rawValue))
                     }
                 }
             }
         }
         
-        return SetGame(numberOfCards: cardContents.count) {
+        return SetGameModel(numberOfCards: cardContents.count) {
             index in cardContents[index]
         }
     }
     
-    var cards: Array<SetGame<SetGameCard>.Card> {
+    var cards: Array<SetGameModel<SetGameCardVM>.Card> {
         model.cards
     }
     
-    func choose(card: SetGame<SetGameCard>.Card) {
+    func choose(card: SetGameModel<SetGameCardVM>.Card) {
         objectWillChange.send()
         model.choose(card: card)
     }

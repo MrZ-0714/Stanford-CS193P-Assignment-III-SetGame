@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CardView: View {
-    var card: SetGame<SetGameCard>.Card
+struct SetGameCardView: View {
+    var card: SetGameModel<SetGameCardVM>.Card
     
     @ViewBuilder
     var body: some View {
@@ -24,6 +24,6 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         let card = SetGameVM.init().cards[0]
-        CardView(card: card)
+        SetGameCardView(card: card)
     }
 }
