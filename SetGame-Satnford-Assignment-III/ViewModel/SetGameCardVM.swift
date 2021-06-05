@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SetGameCardVM {
-    private var numberOfShapes: Int
-    private var shapeType: String
-    private var shapeColor: String
-    private var opacity: Double
+    var numberOfShapes: Int
+    var shapeType: String
+    var shapeColor: String
+    var opacity: Double
     
     init(shapeType: String, numberOfShapes: Int, opacity: Double, shapeColor: String) {
         self.shapeType = shapeType

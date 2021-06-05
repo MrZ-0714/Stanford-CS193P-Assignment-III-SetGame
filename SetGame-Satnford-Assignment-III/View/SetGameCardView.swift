@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SetGameCardView: View {
-    var card: SetGameModel<SetGameCardVM>.Card
+    var card: SetGameCardVM
     
     @ViewBuilder
     var body: some View {
         GeometryReader {
-            geometry in card.content.cardToShow
+            geometry in card.cardToShow
         }
         .aspectRatio(1/1.618, contentMode: .fit)
         .border(Color.black, width: 1)
@@ -23,7 +23,7 @@ struct SetGameCardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        let card = SetGameVM.init().cards[0]
+        let card = SetGameCardVM.init(shapeType: "Oval", numberOfShapes: 3, opacity: 0.3, shapeColor: "Red")
         SetGameCardView(card: card)
     }
 }
