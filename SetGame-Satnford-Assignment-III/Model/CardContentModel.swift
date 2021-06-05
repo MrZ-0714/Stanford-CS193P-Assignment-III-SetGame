@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct CardContentModel<CardContentFeatureA, CardContentFeatureB, CardContentFeatureC, CardContentFeatureD> {
-    var cardContentFeatureA: CardContentFeatureA
-    var cardContentFeatureB: CardContentFeatureB
-    var cardContentFeatureC: CardContentFeatureC
-    var cardContentFeatureD: CardContentFeatureD
+struct CardContentModel<FeatureA, FeatureB, FeatureC, FeatureD>: Equatable
+where FeatureA: Equatable, FeatureB: Equatable, FeatureC: Equatable, FeatureD: Equatable {
+    var featureA: FeatureA
+    var featureB: FeatureB
+    var featureC: FeatureC
+    var featureD: FeatureD
 }

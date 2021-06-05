@@ -14,7 +14,15 @@ struct SetGameModel<CardContent> {
     
     mutating func choose(card: Card) {
         print("Chosen card: \(card)")
-        chosenCards.append(card)
+        
+        let i: Int = cards.firstIndex(matching: card)!
+        if (!card.isSelected) {
+            cards[i].isSelected = !cards[i].isSelected
+            chosenCards.append(card)
+        } else {
+            cards[i].isSelected = !cards[i].isSelected
+            
+        }
     }
     
     init(numberOfCards: Int, cardContentFactory: (Int) -> CardContent) {
@@ -27,8 +35,9 @@ struct SetGameModel<CardContent> {
     
     struct Card: Identifiable {
         var id: Int
-        var content: CardContent
         var isSelected: Bool = false
         var isInASet: Bool = false
+        var isFaceUp: Bool = false
+        var content: CardContent
     }
 }
