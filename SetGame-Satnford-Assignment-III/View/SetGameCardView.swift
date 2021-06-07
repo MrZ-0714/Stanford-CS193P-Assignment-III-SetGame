@@ -13,7 +13,20 @@ struct SetGameCardView: View {
     @ViewBuilder
     var body: some View {
         GeometryReader {
-            geometry in card.cardToShow
+            geometry in VStack(spacing: 5) {
+                ForEach(0..<card.numberOfShapes) { _ in
+                    SetGameCardVM.cardShape.init(shapeType: card.shapeType)
+                        .stroke(
+                            SetGameCardVM.cardColor.init(coloring: card.shapeColor).getColor(),
+                            lineWidth: 1.0)
+                        .overlay(SetGameCardVM.cardShape.init(shapeType: card.shapeType)
+                                    .foregroundColor(
+                                        SetGameCardVM.cardColor.init(coloring: card.shapeColor).getColor()
+                                    )
+                                    .opacity(card.opacity)
+                        )
+                }
+            }
         }
         .aspectRatio(1/1.618, contentMode: .fit)
         .border(Color.black, width: 1)

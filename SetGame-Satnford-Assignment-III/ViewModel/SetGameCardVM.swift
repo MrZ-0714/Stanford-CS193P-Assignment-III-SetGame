@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SetGameCardVM {
-    var numberOfShapes: Int
-    var shapeType: String
-    var shapeColor: String
-    var opacity: Double
+    public var numberOfShapes: Int
+    public var shapeType: String
+    public var shapeColor: String
+    public var opacity: Double
     
     init(shapeType: String, numberOfShapes: Int, opacity: Double, shapeColor: String) {
         self.shapeType = shapeType
@@ -20,7 +20,7 @@ struct SetGameCardVM {
         self.shapeColor = shapeColor
     }
     
-    private struct returnedShape : Shape {
+    struct cardShape : Shape {
         var shapeType: String
         
         func path(in rect: CGRect) -> Path {
@@ -37,7 +37,7 @@ struct SetGameCardVM {
         }
     }
     
-    private struct returnedColor {
+    struct cardColor {
         var coloring: String
         
         func getColor() -> SwiftUI.Color {
@@ -52,24 +52,6 @@ struct SetGameCardVM {
                 return .white
             }
         }
-    }
-    
-    public var cardToShow : some View {
-        return
-            VStack(spacing: 5) {
-                ForEach(0..<numberOfShapes) { _ in 
-                    returnedShape.init(shapeType: shapeType)
-                        .stroke(
-                            returnedColor.init(coloring: shapeColor).getColor(),
-                            lineWidth: 1.0)
-                        .overlay(returnedShape.init(shapeType: shapeType)
-                                    .foregroundColor(
-                                        returnedColor.init(coloring: shapeColor).getColor()
-                                    )
-                                    .opacity(opacity)
-                        )
-                }
-            }
     }
     
     enum NumberOfShapesToDraw: Int, CaseIterable, Equatable {
