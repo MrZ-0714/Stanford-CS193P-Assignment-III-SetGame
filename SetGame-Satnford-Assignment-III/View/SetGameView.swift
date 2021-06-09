@@ -13,7 +13,7 @@ struct SetGameView: View {
     var body: some View {
         VStack() {
             Grid(setGameVM.cards) {
-                card in SetGameCardView(card: SetGameCardVM.init(
+                card in SetGameCardView(cardContent: SetGameCardVM.init(
                                             shapeType: card.content.shapeType,
                                             numberOfShapes: card.content.numberOfShapes,
                                             opacity: card.content.opacity,

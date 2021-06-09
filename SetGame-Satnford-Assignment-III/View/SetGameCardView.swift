@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct SetGameCardView: View {
-    var card: SetGameCardVM
+    var cardContent: SetGameCardVM
     
     @ViewBuilder
     var body: some View {
         GeometryReader {
             geometry in VStack(spacing: 5) {
-                ForEach(0..<card.numberOfShapes) { _ in
-                    SetGameCardVM.cardShape.init(shapeType: card.shapeType)
-                        .stroke(SetGameCardVM.cardColor.init(coloring: card.shapeColor).getColor(),lineWidth: 1.0)
+                ForEach(0..<cardContent.numberOfShapes) { _ in
+                    SetGameCardVM.cardShape.init(shapeType: cardContent.shapeType)
+                        .stroke(SetGameCardVM.cardColor.init(coloring: cardContent.shapeColor).getColor(),lineWidth: 1.0)
                         .overlay(
-                            SetGameCardVM.cardShape.init(shapeType: card.shapeType)
-                                .foregroundColor(SetGameCardVM.cardColor.init(coloring: card.shapeColor).getColor())
-                                .opacity(card.opacity)
+                            SetGameCardVM.cardShape.init(shapeType: cardContent.shapeType)
+                                .foregroundColor(SetGameCardVM.cardColor.init(coloring: cardContent.shapeColor).getColor())
+                                .opacity(cardContent.opacity)
                         )
                 }
             }
@@ -36,7 +36,7 @@ struct SetGameCardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        let card = SetGameCardVM.init(shapeType: "Oval", numberOfShapes: 3, opacity: 0.3, shapeColor: "Red")
-        SetGameCardView(card: card)
+        let setGameCard = SetGameCardVM.init(shapeType: "Oval", numberOfShapes: 3, opacity: 0.3, shapeColor: "Red")
+        SetGameCardView(cardContent: setGameCard)
     }
 }
