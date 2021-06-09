@@ -20,6 +20,22 @@ struct SetGameCardVM {
         self.shapeColor = shapeColor
     }
     
+    static func initFullSetGameDeck() -> [Self] {
+        var fullSetGameCardsDeck = [Self]()
+        
+        for number in SetGameCardVM.NumberOfShapesToDraw.allCases {
+            for shape in SetGameCardVM.ShapeTypes.allCases {
+                for opacity in SetGameCardVM.Opacities.allCases {
+                    for shapeColor in SetGameCardVM.ShapeColors.allCases {
+                        fullSetGameCardsDeck.append(SetGameCardVM(shapeType: shape.rawValue, numberOfShapes: number.rawValue, opacity: opacity.rawValue, shapeColor: shapeColor.rawValue))
+                    }
+                }
+            }
+        }
+        
+        return fullSetGameCardsDeck
+    }
+    
     struct cardShape : Shape {
         var shapeType: String
         
