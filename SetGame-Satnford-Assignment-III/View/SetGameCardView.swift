@@ -16,22 +16,22 @@ struct SetGameCardView: View {
             geometry in VStack(spacing: 5) {
                 ForEach(0..<card.numberOfShapes) { _ in
                     SetGameCardVM.cardShape.init(shapeType: card.shapeType)
-                        .stroke(
-                            SetGameCardVM.cardColor.init(coloring: card.shapeColor).getColor(),
-                            lineWidth: 1.0)
-                        .overlay(SetGameCardVM.cardShape.init(shapeType: card.shapeType)
-                                    .foregroundColor(
-                                        SetGameCardVM.cardColor.init(coloring: card.shapeColor).getColor()
-                                    )
-                                    .opacity(card.opacity)
+                        .stroke(SetGameCardVM.cardColor.init(coloring: card.shapeColor).getColor(),lineWidth: 1.0)
+                        .overlay(
+                            SetGameCardVM.cardShape.init(shapeType: card.shapeType)
+                                .foregroundColor(SetGameCardVM.cardColor.init(coloring: card.shapeColor).getColor())
+                                .opacity(card.opacity)
                         )
                 }
             }
         }
-        .aspectRatio(1/1.618, contentMode: .fit)
-        .border(Color.black, width: 1)
+        .aspectRatio(SetGameCardView.aspectRatio, contentMode: .fit)
+        .border(Color.black, width: SetGameCardView.borderWidth)
         .padding()
     }
+    
+    static var aspectRatio : CGFloat = (1/1.618)
+    static var borderWidth : CGFloat = 1
 }
 
 struct CardView_Previews: PreviewProvider {
