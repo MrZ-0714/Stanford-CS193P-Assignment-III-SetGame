@@ -11,17 +11,7 @@ class SetGameVM: ObservableObject {
     @Published private var model: SetGameModel<SetGameCardVM> = SetGameVM.createSetGame()
     
     private static func createSetGame() -> SetGameModel<SetGameCardVM> {
-        var cardContents = [SetGameCardVM]()
-        
-        for number in SetGameCardVM.NumberOfShapesToDraw.allCases {
-            for shape in SetGameCardVM.ShapeTypes.allCases {
-                for opacity in SetGameCardVM.Opacities.allCases {
-                    for shapeColor in SetGameCardVM.ShapeColors.allCases {
-                        cardContents.append(SetGameCardVM(shapeType: shape.rawValue, numberOfShapes: number.rawValue, opacity: opacity.rawValue, shapeColor: shapeColor.rawValue))
-                    }
-                }
-            }
-        }
+        let cardContents = SetGameCardVM.initFullSetGameDeck()
         
         return SetGameModel(numberOfCards: cardContents.count) {
             index in cardContents[index]
