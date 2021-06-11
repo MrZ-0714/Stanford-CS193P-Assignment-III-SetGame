@@ -24,13 +24,6 @@ where FeatureA : ContentFeature,
 
 }
 
-extension EqutableCardContent {
-    static func ==(arg1: Self, arg2: Self) -> Bool {
-        print("In == func")
-        return true
-    }
-}
-
 protocol ContentFeature: Equatable {
     associatedtype feature
 }

@@ -10,27 +10,6 @@ import Foundation
 struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
     private(set) var cards: Array<Card>
     var chosenCards: Array<Card> = []
-    
-    struct threeChosenCards<cards> {
-        private var chosenCardA: Card
-        private var chosenCardB: Card
-        private var chosenCardC: Card
-        
-        init(_ threeChosenCards: Array<Card>) {
-            chosenCardA = threeChosenCards[0]
-            chosenCardB = threeChosenCards[1]
-            chosenCardC = threeChosenCards[2]
-        }
-        
-        func checkIfCardsMakeASet() -> Bool {
-            return
-                CardContent.FeatureA.featueIsASet(chosenCardA.content.featureA, chosenCardB.content.featureA, chosenCardC.content.featureA)
-                && CardContent.FeatureB.featueIsASet(chosenCardA.content.featureB, chosenCardB.content.featureB, chosenCardC.content.featureB)
-                && CardContent.FeatureC.featueIsASet(chosenCardA.content.featureC, chosenCardB.content.featureC, chosenCardC.content.featureC)
-                && CardContent.FeatureD.featueIsASet(chosenCardA.content.featureD, chosenCardB.content.featureD, chosenCardC.content.featureD)
-        }
-    }
-    
     var dicoveredSets: Array<(Card,Card,Card)> = []
     var numberOfSetsDiscovered: Int = 0
     
@@ -63,19 +42,6 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
         }
     }
     
-    mutating func cardsMakeASet(check cardsToCheck: Array<Card>) -> Bool {
-        print("Checking chosenCards",cardsToCheck)
-        
-        var featureCheckResult: Array<Bool> = []
-        featureCheckResult.append(true)
-        if (cardsToCheck[0].content == cardsToCheck[1].content) {
-            dicoveredSets.append((cardsToCheck[0], cardsToCheck[1], cardsToCheck[2]))
-            return true
-        } else {
-            return false
-        }
-    }
-    
     init(numberOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = Array<Card>()
         for id in 0..<numberOfCards {
@@ -93,6 +59,26 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
         
         mutating func toggleSelection() {
             isSelected = !isSelected
+        }
+    }
+    
+    struct threeChosenCards<cards> {
+        private var chosenCardA: Card
+        private var chosenCardB: Card
+        private var chosenCardC: Card
+        
+        init(_ threeChosenCards: Array<Card>) {
+            chosenCardA = threeChosenCards[0]
+            chosenCardB = threeChosenCards[1]
+            chosenCardC = threeChosenCards[2]
+        }
+        
+        func checkIfCardsMakeASet() -> Bool {
+            return
+                CardContent.FeatureA.featueIsASet(chosenCardA.content.featureA, chosenCardB.content.featureA, chosenCardC.content.featureA)
+                && CardContent.FeatureB.featueIsASet(chosenCardA.content.featureB, chosenCardB.content.featureB, chosenCardC.content.featureB)
+                && CardContent.FeatureC.featueIsASet(chosenCardA.content.featureC, chosenCardB.content.featureC, chosenCardC.content.featureC)
+                && CardContent.FeatureD.featueIsASet(chosenCardA.content.featureD, chosenCardB.content.featureD, chosenCardC.content.featureD)
         }
     }
 }
