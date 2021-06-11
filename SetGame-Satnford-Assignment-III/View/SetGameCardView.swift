@@ -30,8 +30,8 @@ struct SetGameCardView: View {
         .padding()
     }
     
-    static var aspectRatio : CGFloat = (1/1.618)
-    static var borderWidth : CGFloat = 1
+    static private let aspectRatio : CGFloat = (1/1.618)
+    static private let borderWidth : CGFloat = 1
 }
 
 struct CardView_Previews: PreviewProvider {

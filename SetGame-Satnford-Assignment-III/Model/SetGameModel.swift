@@ -13,15 +13,30 @@ struct SetGameModel<CardContent> {
     var numberOfSetsDiscovered: Int = 0
     
     mutating func choose(card: Card) {
+        // Print the chosen card.
         print("Chosen card: \(card)")
-        
-        let i: Int = cards.firstIndex(matching: card)!
-        if (!card.isSelected) {
-            cards[i].isSelected = !cards[i].isSelected
-            chosenCards.append(card)
+        // Determine if the seleced card is already selected or not
+        if (cards[card.id].isSelected) {
+            // If so, toggle selection and remove the card from chosenCards
+            cards[card.id].toggleSelection()
+            chosenCards.remove(at: chosenCards.firstIndex(matching: card)!)
         } else {
-            cards[i].isSelected = !cards[i].isSelected
+            // Mark chosen card as selected.
+            cards[card.id].toggleSelection()
+            //Appened chosen card to an array
+            chosenCards.append(cards[card.id])
+        }
+        
+        if (chosenCards.count == 3) {
+            // Compare Set
+            print("I need to compare set now!")
             
+            //clear selection for the first 3 card in chosen cards
+            for i in (0..<chosenCards.count) {
+                cards[chosenCards[i].id].isSelected = !cards[chosenCards[i].id].isSelected
+            }
+            //Empty chosen card array.
+            chosenCards = []
         }
     }
     
@@ -39,5 +54,9 @@ struct SetGameModel<CardContent> {
         var isInASet: Bool = false
         var isFaceUp: Bool = false
         var content: CardContent
+        
+        mutating func toggleSelection() {
+            isSelected = !isSelected
+        }
     }
 }

@@ -11,10 +11,10 @@ class SetGameVM: ObservableObject {
     @Published private var model: SetGameModel<SetGameCardVM> = SetGameVM.createSetGame()
     
     private static func createSetGame() -> SetGameModel<SetGameCardVM> {
-        let cardContents = SetGameCardVM.initFullSetGameDeck()
+        let fullSetGameCards = SetGameCardVM.initFullSetGameDeck()
         
-        return SetGameModel(numberOfCards: cardContents.count) {
-            index in cardContents[index]
+        return SetGameModel(numberOfCards: fullSetGameCards.count) {
+            index in fullSetGameCards[index]
         }
     }
     

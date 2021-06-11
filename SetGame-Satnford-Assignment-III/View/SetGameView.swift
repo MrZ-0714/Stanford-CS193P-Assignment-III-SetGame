@@ -17,7 +17,10 @@ struct SetGameView: View {
                                             shapeType: card.content.shapeType,
                                             numberOfShapes: card.content.numberOfShapes,
                                             opacity: card.content.opacity,
-                                            shapeColor: card.content.shapeColor))
+                                            shapeColor: card.content.shapeColor)
+                )
+                .background(card.isSelected ? Color.blue.opacity(0.3) : nil )
+                .onTapGesture {setGameVM.choose(card: card)}
             }
         }
     }
