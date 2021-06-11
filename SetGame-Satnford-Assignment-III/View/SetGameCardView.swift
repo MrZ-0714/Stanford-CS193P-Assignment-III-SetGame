@@ -14,13 +14,13 @@ struct SetGameCardView: View {
     var body: some View {
         GeometryReader {
             geometry in VStack(spacing: 5) {
-                ForEach(0..<cardContent.numberOfShapes) { _ in
-                    SetGameCardVM.cardShape.init(shapeType: cardContent.shapeType)
-                        .stroke(SetGameCardVM.cardColor.init(coloring: cardContent.shapeColor).getColor(),lineWidth: 1.0)
+                ForEach(0..<cardContent.numberOfShapes.rawValue) { _ in
+                    SetGameCardVM.cardShape.init(shapeType: cardContent.shapeType.rawValue)
+                        .stroke(SetGameCardVM.cardColor.init(coloring: cardContent.shapeColor.rawValue).getColor(),lineWidth: 1.0)
                         .overlay(
-                            SetGameCardVM.cardShape.init(shapeType: cardContent.shapeType)
-                                .foregroundColor(SetGameCardVM.cardColor.init(coloring: cardContent.shapeColor).getColor())
-                                .opacity(cardContent.opacity)
+                            SetGameCardVM.cardShape.init(shapeType: cardContent.shapeType.rawValue)
+                                .foregroundColor(SetGameCardVM.cardColor.init(coloring: cardContent.shapeColor.rawValue).getColor())
+                                .opacity(cardContent.opacity.rawValue)
                         )
                 }
             }
@@ -36,7 +36,11 @@ struct SetGameCardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        let setGameCard = SetGameCardVM.init(shapeType: "Oval", numberOfShapes: 3, opacity: 0.3, shapeColor: "Red")
+        let setGameCard = SetGameCardVM.init(
+            numberOfShapes: SetGameCardVM.NumberOfShapesToDraw.three,
+            shapeType: SetGameCardVM.ShapeTypes.Diamond,
+            shapeColor: SetGameCardVM.ShapeColors.Blue,
+            opacity: SetGameCardVM.Opacities.aThird)
         SetGameCardView(cardContent: setGameCard)
     }
 }

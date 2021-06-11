@@ -7,10 +7,36 @@
 
 import Foundation
 
-struct CardContentModel<FeatureA, FeatureB, FeatureC, FeatureD>: Equatable
-where FeatureA: Equatable, FeatureB: Equatable, FeatureC: Equatable, FeatureD: Equatable {
-    var featureA: FeatureA
-    var featureB: FeatureB
-    var featureC: FeatureC
-    var featureD: FeatureD
+protocol EqutableCardContent: Equatable
+where FeatureA : ContentFeature,
+      FeatureB : ContentFeature,
+      FeatureC : ContentFeature,
+      FeatureD : ContentFeature {
+    associatedtype FeatureA
+    associatedtype FeatureB
+    associatedtype FeatureC
+    associatedtype FeatureD
+
+    var featureA : FeatureA { get }
+    var featureB : FeatureB { get }
+    var featureC : FeatureC { get }
+    var featureD : FeatureD { get }
+
+}
+
+extension EqutableCardContent {
+    static func ==(arg1: Self, arg2: Self) -> Bool {
+        print("In == func")
+        return true
+    }
+}
+
+protocol ContentFeature: Equatable {
+    associatedtype feature
+}
+
+extension ContentFeature {
+    static func featueIsASet<feature: Equatable> (_ featureA: feature, _ featureB: feature, _ featureC: feature) -> Bool {
+        return (featureA == featureB && featureB == featureC) || (featureA != featureB && featureB != featureC && featureA != featureC)
+    }
 }

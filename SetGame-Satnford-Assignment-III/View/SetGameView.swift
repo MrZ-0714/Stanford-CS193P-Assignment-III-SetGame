@@ -14,10 +14,11 @@ struct SetGameView: View {
         VStack() {
             Grid(setGameVM.cards) {
                 card in SetGameCardView(cardContent: SetGameCardVM.init(
-                                            shapeType: card.content.shapeType,
-                                            numberOfShapes: card.content.numberOfShapes,
-                                            opacity: card.content.opacity,
-                                            shapeColor: card.content.shapeColor)
+                    numberOfShapes: card.content.numberOfShapes,
+                    shapeType: card.content.shapeType,
+                    shapeColor: card.content.shapeColor,
+                    opacity: card.content.opacity
+                )
                 )
                 .background(card.isSelected ? Color.blue.opacity(0.3) : nil )
                 .onTapGesture {setGameVM.choose(card: card)}

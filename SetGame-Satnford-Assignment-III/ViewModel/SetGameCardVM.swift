@@ -7,13 +7,23 @@
 
 import SwiftUI
 
-struct SetGameCardVM {
-    public var numberOfShapes: Int
-    public var shapeType: String
-    public var shapeColor: String
-    public var opacity: Double
+struct SetGameCardVM: EqutableCardContent, Equatable {
+    typealias FeatureA = NumberOfShapesToDraw
+    typealias FeatureB = ShapeTypes
+    typealias FeatureC = ShapeColors
+    typealias FeatureD = Opacities
     
-    init(shapeType: String, numberOfShapes: Int, opacity: Double, shapeColor: String) {
+    var featureA: NumberOfShapesToDraw { numberOfShapes }
+    var featureB: ShapeTypes { shapeType }
+    var featureC: ShapeColors { shapeColor }
+    var featureD: Opacities { opacity }
+    
+    public var numberOfShapes: NumberOfShapesToDraw
+    public var shapeType: ShapeTypes
+    public var shapeColor: ShapeColors
+    public var opacity: Opacities
+    
+    init(numberOfShapes: NumberOfShapesToDraw, shapeType: ShapeTypes, shapeColor: ShapeColors, opacity: Opacities) {
         self.shapeType = shapeType
         self.numberOfShapes = numberOfShapes
         self.opacity = opacity
@@ -23,11 +33,11 @@ struct SetGameCardVM {
     static func initFullSetGameDeck() -> [Self] {
         var fullSetGameCardsDeck = [Self]()
         
-        for number in SetGameCardVM.NumberOfShapesToDraw.allCases {
-            for shape in SetGameCardVM.ShapeTypes.allCases {
-                for opacity in SetGameCardVM.Opacities.allCases {
-                    for shapeColor in SetGameCardVM.ShapeColors.allCases {
-                        fullSetGameCardsDeck.append(SetGameCardVM(shapeType: shape.rawValue, numberOfShapes: number.rawValue, opacity: opacity.rawValue, shapeColor: shapeColor.rawValue))
+        for numberOfShapes in SetGameCardVM.NumberOfShapesToDraw.allCases {
+            for shapeType in SetGameCardVM.ShapeTypes.allCases {
+                for shapeColor in SetGameCardVM.ShapeColors.allCases {
+                    for opacity in SetGameCardVM.Opacities.allCases {
+                        fullSetGameCardsDeck.append(SetGameCardVM(numberOfShapes: numberOfShapes, shapeType: shapeType, shapeColor: shapeColor, opacity: opacity))
                     }
                 }
             }
@@ -70,19 +80,23 @@ struct SetGameCardVM {
         }
     }
     
-    enum NumberOfShapesToDraw: Int, CaseIterable, Equatable {
+    enum NumberOfShapesToDraw: Int, CaseIterable, Equatable, ContentFeature {
+        typealias feature = Self
         case one = 1, two, three
     }
     
-    enum ShapeTypes: String, CaseIterable, Equatable {
+    enum ShapeTypes: String, CaseIterable, Equatable, ContentFeature {
+        typealias feature = Self
         case Oval, Circle, Diamond
     }
     
-    enum ShapeColors: String, CaseIterable, Equatable {
+    enum ShapeColors: String, CaseIterable, Equatable, ContentFeature {
+        typealias feature = Self
         case Red, Blue, Black
     }
     
-    enum Opacities: Double, CaseIterable, Equatable {
+    enum Opacities: Double, CaseIterable, Equatable, ContentFeature {
+        typealias feature = Self
         case None = 0.0
         case aThird = 0.3
         case full = 1
