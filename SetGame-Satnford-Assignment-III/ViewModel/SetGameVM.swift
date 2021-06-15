@@ -22,6 +22,10 @@ class SetGameVM: ObservableObject {
         model.allCards
     }
     
+    var cardsInDisplay: Array<SetGameModel<SetGameCardVM>.Card> {
+        model.inDisplayCards
+    }
+    
     func choose(card: SetGameModel<SetGameCardVM>.Card) {
         objectWillChange.send()
         model.choose(card: card)

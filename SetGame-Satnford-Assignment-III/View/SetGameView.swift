@@ -12,7 +12,7 @@ struct SetGameView: View {
     
     var body: some View {
         VStack() {
-            Grid(setGameVM.allCards) {
+            Grid(setGameVM.cardsInDisplay) {
                 card in SetGameCardView(cardContent: SetGameCardVM.init(
                     numberOfShapes: card.content.numberOfShapes,
                     shapeType: card.content.shapeType,

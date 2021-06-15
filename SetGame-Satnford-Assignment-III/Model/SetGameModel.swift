@@ -20,11 +20,11 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
         // Determine if the seleced card is already selected or not
         if (allCards[card.id].isSelected) {
             // If so, toggle selection and remove the card from chosenCards
-            allCards[card.id].toggleSelection()
+            allCards[card.id].isSelected.toggle()
             chosenCards.remove(at: chosenCards.firstIndex(matching: card)!)
         } else {
             // Mark chosen card as selected.
-            allCards[card.id].toggleSelection()
+            allCards[card.id].isSelected.toggle()
             //Appened chosen card to an array
             chosenCards.append(allCards[card.id])
         }
@@ -36,7 +36,7 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
             
             //clear selection for the first 3 card in chosen cards
             for i in (0..<chosenCards.count) {
-                allCards[chosenCards[i].id].toggleSelection()
+                allCards[chosenCards[i].id].isSelected.toggle()
             }
             //Empty chosen card array.
             chosenCards = []
@@ -53,8 +53,9 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
         
         for i in inDisplayCardIds {
             inDisplayCards.append(allCards[i])
+            allCards[i].isFaceUp.toggle()
         }
-        print(inDisplayCards)
+        
     }
     
     struct Card: Identifiable {
@@ -63,10 +64,6 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
         var isInASet: Bool = false
         var isFaceUp: Bool = false
         var content: CardContent
-        
-        mutating func toggleSelection() {
-            isSelected = !isSelected
-        }
     }
     
     struct threeChosenCards<cards> {
