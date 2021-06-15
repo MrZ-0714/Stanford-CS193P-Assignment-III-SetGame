@@ -8,24 +8,25 @@
 import Foundation
 
 struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
-    private(set) var cards: Array<Card>
-    var chosenCards: Array<Card> = []
-    var dicoveredSets: Array<(Card,Card,Card)> = []
-    var numberOfSetsDiscovered: Int = 0
+    private(set) var allCards: Array<Card>
+    private(set) var inDisplayCards: Array<Card> = []
+    private(set) var chosenCards: Array<Card> = []
+    private(set) var dicoveredSets: Array<(Card,Card,Card)> = []
+    private(set) var numberOfSetsDiscovered: Int = 0
     
     mutating func choose(card: Card) {
         // Print the chosen card.
         print("Chosen card: \(card)")
         // Determine if the seleced card is already selected or not
-        if (cards[card.id].isSelected) {
+        if (allCards[card.id].isSelected) {
             // If so, toggle selection and remove the card from chosenCards
-            cards[card.id].toggleSelection()
+            allCards[card.id].toggleSelection()
             chosenCards.remove(at: chosenCards.firstIndex(matching: card)!)
         } else {
             // Mark chosen card as selected.
-            cards[card.id].toggleSelection()
+            allCards[card.id].toggleSelection()
             //Appened chosen card to an array
-            chosenCards.append(cards[card.id])
+            chosenCards.append(allCards[card.id])
         }
         
         if (chosenCards.count == 3) {
@@ -35,7 +36,7 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
             
             //clear selection for the first 3 card in chosen cards
             for i in (0..<chosenCards.count) {
-                cards[chosenCards[i].id].toggleSelection()
+                allCards[chosenCards[i].id].toggleSelection()
             }
             //Empty chosen card array.
             chosenCards = []
@@ -43,11 +44,17 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
     }
     
     init(numberOfCards: Int, cardContentFactory: (Int) -> CardContent) {
-        cards = Array<Card>()
+        allCards = Array<Card>()
         for id in 0..<numberOfCards {
             let content: CardContent = cardContentFactory(id)
-            cards.append(Card(id: id, content: content))
+            allCards.append(Card(id: id, content: content))
         }
+        let (inDisplayCardIds, notInDisplayCardIds) = Int.randomlyChooseWithNoRepeat(numberOfElement: 12, in: 0..<numberOfCards)
+        
+        for i in inDisplayCardIds {
+            inDisplayCards.append(allCards[i])
+        }
+        print(inDisplayCards)
     }
     
     struct Card: Identifiable {

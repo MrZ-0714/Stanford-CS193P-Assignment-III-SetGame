@@ -18,8 +18,8 @@ class SetGameVM: ObservableObject {
         }
     }
     
-    var cards: Array<SetGameModel<SetGameCardVM>.Card> {
-        model.cards
+    var allCards: Array<SetGameModel<SetGameCardVM>.Card> {
+        model.allCards
     }
     
     func choose(card: SetGameModel<SetGameCardVM>.Card) {
