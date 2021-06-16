@@ -38,4 +38,9 @@ class SetGameVM: ObservableObject {
     func startNewGame() -> Void {
         model = SetGameVM.createSetGame()
     }
+    
+    func deal3MoreCards() -> Void {
+        model.deal3MoreCards()
+    }
+    
 }

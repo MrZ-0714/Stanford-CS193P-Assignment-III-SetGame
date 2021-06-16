@@ -30,6 +30,6 @@ extension Int {
                 notChosenInt.append(i)
             }
         }
-        return (result: randomNonRepeatInt, notChosen: notChosenInt)
+        return (result: randomNonRepeatInt, notChosen: notChosenInt.shuffled())
     }
 }

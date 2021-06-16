@@ -45,16 +45,7 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
                     inDisplayCards.remove(at: inDisplayCards.firstIndex(matching: chosenCard)!)
                 }
                 //get 3 new cards from notInDisplayCards and append them to inDisplayCards and remove them from notInDisplayCards
-                if notInDisplayCards.count != 0 {
-                    var maxCardToPullIn: Int = 3
-                    if notInDisplayCards.count <= 3 {
-                        maxCardToPullIn = notInDisplayCards.count
-                    }
-                    for _ in 0..<maxCardToPullIn {
-                        inDisplayCards.append(notInDisplayCards[0])
-                        notInDisplayCards.remove(at: 0)
-                    }
-                }
+                deal3MoreCards()
                 //Empty chosenCards array
                 chosenCards = []
                 
@@ -66,6 +57,19 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
                 }
                 //Empty chosenCards array
                 chosenCards = []
+            }
+        }
+    }
+    
+    mutating func deal3MoreCards() -> Void {
+        if notInDisplayCards.count != 0 {
+            var maxCardsToPullIn: Int = 3
+            if notInDisplayCards.count <= 3 {
+                maxCardsToPullIn = notInDisplayCards.count
+            }
+            for _ in 0..<maxCardsToPullIn {
+                inDisplayCards.append(notInDisplayCards[0])
+                notInDisplayCards.remove(at: 0)
             }
         }
     }
