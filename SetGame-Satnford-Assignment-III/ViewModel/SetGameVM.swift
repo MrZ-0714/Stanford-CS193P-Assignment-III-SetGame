@@ -26,8 +26,16 @@ class SetGameVM: ObservableObject {
         model.inDisplayCards
     }
     
+    var score: Int {
+        model.numberOfSetsDiscovered
+    }
+    
     func choose(card: SetGameModel<SetGameCardVM>.Card) {
         objectWillChange.send()
         model.choose(card: card)
+    }
+    
+    func startNewGame() -> Void {
+        model = SetGameVM.createSetGame()
     }
 }

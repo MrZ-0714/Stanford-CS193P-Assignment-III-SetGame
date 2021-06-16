@@ -19,17 +19,15 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
         // Print the chosen card.
         print("Chosen card: \(card.id)")
         // Determine if the seleced card is already selected or not
-        if (allCards[card.id].isSelected) {
-            // If so, toggle selection and remove the card from chosenCards
-            allCards[card.id].toggleSelected()
+        if (inDisplayCardsChecker(matching: card)) {
+            // If so, unselect the card and remove the card from chosenCards
             chosenCards.remove(at: chosenCards.firstIndex(matching: card)!)
             inDisplayCardsToggle(matching: card, type: Card.actionType.isSelected.rawValue)
         } else {
             // Mark chosen card as selected.
-            allCards[card.id].toggleSelected()
             inDisplayCardsToggle(matching: card, type: Card.actionType.isSelected.rawValue)
             //Appened chosen card to an array
-            chosenCards.append(allCards[card.id])
+            chosenCards.append(card)
         }
         
         if (chosenCards.count == 3) {
@@ -64,7 +62,6 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
                 print("Not a set")
                 //clear selection for the first 3 card in chosen cards
                 for i in 0..<chosenCards.count {
-                    allCards[chosenCards[i].id].isSelected.toggle()
                     inDisplayCardsToggle(matching: chosenCards[i], type: Card.actionType.isSelected.rawValue)
                 }
                 //Empty chosenCards array
@@ -86,15 +83,12 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
 //        for i in 0..<12 {
 //            inDisplayCardIds.append(i)
 //        }
-//        for i in 12..<15 {
+//        for i in 12..<81 {
 //            notInDisplayCardIds.append(i)
 //        }
-//        print(inDisplayCardIds.count)
-//        print(notInDisplayCardIds.count)
         
         for i in inDisplayCardIds {
             inDisplayCards.append(allCards[i])
-            allCards[i].isFaceUp.toggle()
         }
         
         for i in notInDisplayCardIds {
@@ -150,4 +144,14 @@ struct SetGameModel<CardContent> where CardContent: EqutableCardContent {
             inDisplayCards[inDisplayCards.firstIndex(matching: matching)!].toggleSelected()
         }
     }
+    
+    func inDisplayCardsChecker(matching inputCard: Card) -> Bool {
+        for inDisplayCard in inDisplayCards {
+            if inDisplayCard.id == inputCard.id && inDisplayCard.isSelected {
+                return true
+            }
+        }
+        return false
+    }
+    
 }

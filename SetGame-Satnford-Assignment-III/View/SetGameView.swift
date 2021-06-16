@@ -12,6 +12,7 @@ struct SetGameView: View {
     
     var body: some View {
         VStack() {
+            Text("\(setGameVM.score)")
             Grid(setGameVM.cardsInDisplay) {
                 card in SetGameCardView(cardContent: SetGameCardVM.init(
                     numberOfShapes: card.content.numberOfShapes,
@@ -20,7 +21,16 @@ struct SetGameView: View {
                     opacity: card.content.opacity
                 ))
                 .background(card.isSelected ? Color.blue.opacity(0.3) : nil )
-                .onTapGesture {setGameVM.choose(card: card)}
+                .onTapGesture{setGameVM.choose(card: card)}
+            }
+            Button(action: {setGameVM.startNewGame()}) {
+                Text("New Game")
+                    .bold()
+                    .padding(20)
+                    .foregroundColor(Color.white)
+                    .background(Color.purple)
+                    .cornerRadius(12)
+                
             }
         }
     }
